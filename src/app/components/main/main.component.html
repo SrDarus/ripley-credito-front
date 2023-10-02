@@ -1,0 +1,18 @@
+<h1>Consulta tu crédito</h1>
+
+<form [formGroup]="formUsuario" (ngSubmit)="enviar()">
+    <input type="text" formControlName="rutCliente"  placeholder="Ingrese Rut">
+    <input type="text" formControlName="montoCredito"  placeholder="Ingrese el monto">
+    <select formControlName="numeroCuotas">
+        <option [ngValue]="0" disabled>Seleccione las cuotas</option>
+        <option *ngFor="let c of cuotas" [ngValue]="c">{{c}}</option>
+      </select>
+
+      
+  <button type="submit" class="btn btn-primary" [disabled]="formUsuario.invalid">Simular</button>
+</form>
+
+<h1 *ngIf="consultaCreditoResponse">
+  Usted pagaria {{NumeroCoutas}} Cuotas de {{consultaCreditoResponse.valorCuota}}
+</h1>
+

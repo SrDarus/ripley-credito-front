@@ -1,0 +1,18 @@
+<div class="container">
+    <form class="mt-10"  [formGroup]="formLogin">
+        <h1>Login</h1>
+            <input  formControlName="user" type="text" placeholder="Correo">
+        <label *ngIf="formLogin.invalid">  Correo invalido: {{formLogin.valid}}</label>
+
+            <input  formControlName="password" type="password" placeholder="Password">
+
+        <div fxLayout="row" >
+            <a href="https://www.google.com/" target="_blank">Link</a>
+        </div>
+
+
+        <button  (click)="login()">Inicial Sesion</button>
+
+
+    </form>
+</div>
